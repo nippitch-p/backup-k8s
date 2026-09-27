@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app2
+  namespace: lab
+  labels: { app: app2 }
+spec:
+  containers:
+  - name: echo
+    image: hashicorp/http-echo:0.2.3
+    args: ["-listen=:8080","-text=Hello from APP2"]
+    ports: [{ containerPort: 8080 }]

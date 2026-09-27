@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ipa-paths
+  namespace: lab
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: ipa.local
+    http:
+      paths:
+      - path: /app1
+        pathType: Prefix
+        backend:
+          service: { name: svc-app1, port: { number: 8080 } }
+      - path: /app2
+        pathType: Prefix
+        backend:
+          service: { name: svc-app2,  port: { number: 8080 } }

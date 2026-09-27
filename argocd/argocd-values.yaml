@@ -1,0 +1,15 @@
+server:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hostname: ipa.local
+    path: /argocd
+
+configs:
+  params:
+    server.insecure: true
+    server.rootpath: /argocd
+    server.basehref: /argocd
+
+  cm:
+    url: http://ipa.local:8080/argocd

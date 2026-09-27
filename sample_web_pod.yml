@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-web-pod
+  labels:
+    app: web
+spec:
+  containers:
+  - name: web
+    image: pchxnph/sample_app:v1.0
+    ports:
+    - containerPort: 8080
